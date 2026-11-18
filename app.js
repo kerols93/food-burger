@@ -21,7 +21,7 @@
 const GOOGLE_SHEET_API_URL = "";
 
 // رقم الواتساب المعتمد لاستقبال الأوردرات بصيغته الدولية
-const WHATSAPP_PHONE = "201200297370";
+const WHATSAPP_PHONE = "201011695927";
 
 // العملة وإعدادات التوصيل
 const CURRENCY_LABEL = "ج.م";
