@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOOD BURGER | TASTE THAT SPEAKS FOR ITSELF</title>
+    <!-- Google Fonts: Alexandria & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الشريط العلوي للإعلانات -->
+    <div class="top-announcement">
+        <div class="container announcement-content">
+            <span>🔥 توصيل مجاني للطلبات فوق 250 ج.م | لحم بيف صافي 100% مشوي طازج على الجريل</span>
+            <span class="delivery-badge">⚡ توصيل سخن خلال 30 - 45 دقيقة</span>
+        </div>
+    </div>
+
+    <!-- ترويسة الموقع (Header & Navigation) -->
+    <header class="main-header">
+        <div class="container header-container">
+            <!-- الشعار -->
+            <a href="#" class="brand-logo">
+                <span class="logo-text">FOOD <span class="logo-accent">BURGER</span></span>
+                <span class="logo-sub">TASTE THAT SPEAKS FOR ITSELF</span>
+            </a>
+
+            <!-- روابط التنقل للشاشات الكبيرة -->
+            <nav class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#hero" class="active">الرئيسية</a></li>
+                    <li><a href="#bestsellers">وحوش المنيو 🔥</a></li>
+                    <li><a href="#products">المنيو الكامل</a></li>
+                    <li><a href="#cart">سلة الطلبات</a></li>
+                    <li><a href="#checkout">تأكيد الأوردر</a></li>
+                </ul>
+            </nav>
+
+            <!-- الإجراءات (سلة الطلبات + زر القائمة للموبايل) -->
+            <div class="header-actions">
+                <a href="#cart" class="icon-btn cart-btn" aria-label="سلة الطلبات">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-badge" id="cart-badge-count">0</span>
+                </a>
+
+                <!-- زر القائمة للموبايل (Hamburger Button) -->
+                <button type="button" class="hamburger-btn" id="mobile-menu-toggle" aria-label="فتح قائمة التنقل">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- خلفية وقائمة الموبايل الجانبية المنبثقة (Mobile Navigation Drawer) -->
+    <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+    <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="قائمة الموبايل">
+        <div class="mobile-nav-header">
+            <a href="#" class="brand-logo">
+                <span class="logo-text">FOOD <span class="logo-accent">BURGER</span></span>
+                <span class="logo-sub">TASTE THAT SPEAKS FOR ITSELF</span>
+            </a>
+            <button type="button" class="mobile-nav-close" id="mobile-menu-close" aria-label="إغلاق القائمة">✕</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#hero" class="mobile-link">الرئيسية</a></li>
+            <li><a href="#bestsellers" class="mobile-link">وحوش المنيو 🔥</a></li>
+            <li><a href="#products" class="mobile-link">المنيو الكامل</a></li>
+            <li><a href="#cart" class="mobile-link">سلة الطلبات</a></li>
+            <li><a href="#checkout" class="mobile-link">تأكيد الأوردر</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="https://wa.me/201200297370" target="_blank" class="mobile-whatsapp-cta" data-whatsapp-link>
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <span>اطلب سريعاً عبر واتساب</span>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- قسم الواجهة الرئيسية (Hero Section) -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-tag">🔥 BEEF BURGER HOUSE • TASTE THAT SPEAKS FOR ITSELF</div>
+                    <h1 class="hero-title">الطعم اللي<br><span class="highlight-text">بيتكلم عن نفسه</span></h1>
+                    <p class="hero-description">
+                        أقوى تجربة بيف برجر سماش ومشوي طازج يومياً، محشي ميكس جبن سايحة، بيكون مقرمش، وموتزاريلا ستيكس مع صوصات FOOD BURGER السرية.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#products" class="btn btn-primary">🍔 استعرض المنيو</a>
+                        <a href="#checkout" class="btn btn-secondary">⚡ إتمام الأوردر السريع</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">+12K</span>
+                            <span class="stat-label">أوردر سعيد</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">بيف صافي طازج</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">30 د</span>
+                            <span class="stat-label">متوسط التوصيل</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بطاقة العرض البصري للبرجر في الواجهة -->
+                <div class="hero-visual">
+                    <div class="hero-img-frame">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=900&auto=format&fit=crop" alt="FOOD BURGER Signature Beef Burger" class="hero-burger-img">
+                        <div class="hero-floating-badge badge-top">
+                            <span class="badge-fire">🔥</span>
+                            <div>
+                                <strong>دكتور فيمس 200 جم</strong>
+                                <span>محشي ميكس جبن سايحة</span>
+                            </div>
+                        </div>
+                        <div class="hero-floating-badge badge-bottom">
+                            <span class="price-pill">تبدأ من 65 ج.م</span>
+                            <span class="sub-pill">خصم 15% بكود BURGER15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ميزات المطعم (Restaurant Features) -->
+        <section class="features-section">
+            <div class="container features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2c1 3 4 5 4 9a4 4 0 0 1-8 0c0-1.5.5-2.8 1.3-3.8C9.8 9.2 11 9.5 11 11c0-2.5 1-5 1-9z"></path><path d="M12 22a8 8 0 0 0 8-8c0-4-3-7-5-9"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="feature-title">شوي طازج عند الطلب</h4>
+                        <p class="feature-text">لحم بيف 100% بيتجهز سخن لحظة بلحظة</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div>
+                        <h4 class="feature-title">توصيل سريع وهو سخن</h4>
+                        <p class="feature-text">تغليف حراري بيحافظ على القرمشة والجبنة</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                    </div>
+                    <div>
+                        <h4 class="feature-title">أوفر من تطبيقات التوصيل</h4>
+                        <p class="feature-text">اطلب دايركت بنفس أسعار المطعم + كوبونات خصم</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                    </div>
+                    <div>
+                        <h4 class="feature-title">كاش أو إنستاباي ومحافظ</h4>
+                        <p class="feature-text">دفع عند الاستلام أو تحويل فوري بكل سهولة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 1. قسم الأكثر طلباً ومبيعاً (Best Sellers Section)               -->
+        <!-- ================================================================= -->
+        <section id="bestsellers" class="products-section bestsellers-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">الأكثر طلباً في المنيو 🔥</span>
+                    <h2 class="section-title">وحوش <span class="text-orange">FOOD BURGER</span></h2>
+                    <p class="section-subtitle">أقوى ساندوتشات البيف برجر اللي عليها إقبال يومي — اختار ساندوتش أو كومبو واطلب فوراً</p>
+                </div>
+
+                <!-- شبكة الساندوتشات الأكثر طلباً -->
+                <div class="products-grid" id="bestsellers-grid">
+                    <div class="loading-products-spinner">
+                        <div class="spinner-icon"></div>
+                        <p>جارٍ تجهيز وحوش المنيو...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 2. قسم المنيو الكامل والتصنيفات التفاعلية (Full Menu)            -->
+        <!-- ================================================================= -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">BEEF BURGER MENU 🍔</span>
+                    <h2 class="section-title">المنيو الكامل والتصنيفات</h2>
+                    <p class="section-subtitle">تصفح كل أصناف البيف برجر، السبيشيال، الفرايز والصوصات — اضغط على أي ساندوتش لتفاصيل المكونات</p>
+                </div>
+
+                <!-- تصفية الفئات التفاعلية -->
+                <div class="category-filters" id="category-filters">
+                    <button type="button" class="filter-btn active" data-category="الكل">الكل</button>
+                </div>
+
+                <!-- شبكة أصناف المنيو -->
+                <div class="products-grid" id="products-grid">
+                    <div class="loading-products-spinner">
+                        <div class="spinner-icon"></div>
+                        <p>جارٍ تحميل المنيو الطازج...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- نافذة عرض تفاصيل الساندوتش المنبثقة (Quick View Modal) -->
+        <div id="product-modal-backdrop" class="product-modal-backdrop">
+            <div id="product-modal-content" class="product-modal">
+                <!-- يتم تعبئة المحتوى ديناميكياً بواسطة JavaScript -->
+            </div>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- 3. قسم سلة الطلبات (Order Cart Section)                           -->
+        <!-- ================================================================= -->
+        <section id="cart" class="cart-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">صينية الأوردر 🍔</span>
+                    <h2 class="section-title">سلة الطلبات</h2>
+                    <p class="section-subtitle">راجع ساندوتشاتك وعدّل الكميات أو ضيف كود الخصم قبل تأكيد الأوردر</p>
+                </div>
+
+                <div class="cart-layout">
+                    <!-- قائمة عناصر السلة -->
+                    <div class="cart-items-wrapper">
+                        <div class="cart-header-row">
+                            <span>الصنف</span>
+                            <span>الكمية</span>
+                            <span>السعر الإجمالي</span>
+                            <span>إزالة</span>
+                        </div>
+
+                        <!-- الحاوية الديناميكية لعناصر السلة -->
+                        <div id="cart-items-container"></div>
+
+                        <!-- صندوق كوبون الخصم التفاعلي -->
+                        <div class="cart-coupon-box" id="coupon-box">
+                            <input type="text" id="coupon-code-input" placeholder="أدخل كود الخصم (مثال: BURGER15)" class="coupon-input" dir="ltr">
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="applyCouponCode()">تطبيق الكوبون</button>
+                        </div>
+                        <div id="applied-coupon-tag-container"></div>
+                    </div>
+
+                    <!-- ملخص السلة والحساب بالجنيه المصري -->
+                    <div class="cart-summary-card">
+                        <h3 class="summary-title">ملخص الأوردر</h3>
+                        <div class="summary-list">
+                            <div class="summary-row">
+                                <span>مجموع الأصناف</span>
+                                <span id="cart-subtotal">0 ج.م</span>
+                            </div>
+                            <!-- صف خصم الكوبون -->
+                            <div class="summary-row discount-row" id="cart-discount-row" style="display: none;">
+                                <span id="cart-discount-label">خصم الكوبون</span>
+                                <span class="text-discount" id="cart-discount-val">-0 ج.م</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>رسوم التوصيل</span>
+                                <span id="cart-shipping" class="text-free">مجاناً</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>الخدمة والضريبة</span>
+                                <span>مشمولة بالسعر</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-row total-row">
+                                <span>الإجمالي النهائي</span>
+                                <span class="final-price" id="cart-total">0 ج.م</span>
+                            </div>
+                        </div>
+
+                        <a href="#checkout" class="btn btn-primary btn-block">المتابعة لتأكيد الأوردر 🔥</a>
+                        
+                        <div class="secure-checkout-hint">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <span>طلب مباشر بدون عمولات وسيطة • توصيل مجاني فوق 250 ج.م</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- 4. قسم تأكيد الأوردر وبيانات التوصيل (Checkout Section)           -->
+        <!-- ================================================================= -->
+        <section id="checkout" class="checkout-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">الخطوة الأخيرة</span>
+                    <h2 class="section-title">تأكيد الأوردر والتوصيل</h2>
+                    <p class="section-subtitle">اكتب بياناتك وهيتحول أوردرك فوراً لواتساب المطبخ للتجهيز السريع</p>
+                </div>
+
+                <div class="checkout-layout">
+                    <!-- نموذج إدخال البيانات -->
+                    <form class="checkout-form" id="order-form">
+                        <!-- معلومات العميل -->
+                        <div class="form-group-card">
+                            <h3 class="form-card-title">
+                                <span class="step-num">1</span>
+                                بياناتك للتواصل
+                            </h3>
+                            <div class="form-grid">
+                                <div class="input-field">
+                                    <label for="full-name">الاسم *</label>
+                                    <input type="text" id="full-name" required placeholder="مثال: كريم أحمد">
+                                </div>
+                                <div class="input-field">
+                                    <label for="phone">رقم الموبايل (واتساب) *</label>
+                                    <input type="tel" id="phone" required placeholder="01XXXXXXXXX" dir="ltr" pattern="^01[0125][0-9]{8}$" title="يرجى إدخال رقم هاتف مصري صحيح يبدأ بـ 01 ومكون من 11 رقماً" maxlength="11">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- طريقة الاستلام والعنوان -->
+                        <div class="form-group-card">
+                            <h3 class="form-card-title">
+                                <span class="step-num">2</span>
+                                التوصيل أو الاستلام من الفرع
+                            </h3>
+                            <div class="delivery-type-switch">
+                                <label class="delivery-type-option">
+                                    <input type="radio" name="delivery_type" value="delivery" checked onchange="renderCart()">
+                                    <span>🛵 توصيل للمنزل (دليفري)</span>
+                                </label>
+                                <label class="delivery-type-option">
+                                    <input type="radio" name="delivery_type" value="pickup" onchange="renderCart()">
+                                    <span>🏪 استلام من الفرع (تيك أواي - بدون رسوم)</span>
+                                </label>
+                            </div>
+
+                            <div class="form-grid" id="delivery-address-fields">
+                                <div class="input-field">
+                                    <label for="city">المنطقة / الحي *</label>
+                                    <input type="text" id="city" required placeholder="مثال: مدينة نصر، المعادي، وسط البلد">
+                                </div>
+                                <div class="input-field">
+                                    <label for="district">أقرب علامة مميزة *</label>
+                                    <input type="text" id="district" required placeholder="مثال: بجوار صيدلية العزبي">
+                                </div>
+                                <div class="input-field full-width">
+                                    <label for="address">العنوان التفصيلي (الشارع / العمارة / الدور / الشقة) *</label>
+                                    <input type="text" id="address" required placeholder="مثال: شارع عباس العقاد، عمارة 14، الدور 3، شقة 5">
+                                </div>
+                                <div class="input-field full-width">
+                                    <label for="notes">ملاحظات للمطبخ (اختياري)</label>
+                                    <textarea id="notes" rows="3" placeholder="مثال: بدون بصل، زود صوص شيدر، كاتشب زيادة..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- طريقة الدفع -->
+                        <div class="form-group-card">
+                            <h3 class="form-card-title">
+                                <span class="step-num">3</span>
+                                طريقة الدفع
+                            </h3>
+                            <div class="payment-methods">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="cod" checked>
+                                    <span class="custom-radio"></span>
+                                    <div class="payment-details">
+                                        <div class="payment-name-row">
+                                            <strong>الدفع كاش عند الاستلام</strong>
+                                            <span class="payment-tag">الأكثر طلباً</span>
+                                        </div>
+                                        <p>ادفع للطيار لما يوصلك الأوردر وهو سخن</p>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="payment_method" value="wallet">
+                                    <span class="custom-radio"></span>
+                                    <div class="payment-details">
+                                        <div class="payment-name-row">
+                                            <strong>إنستاباي / فودافون كاش / محفظة إلكترونية</strong>
+                                            <span class="payment-tag">تحويل فوري</span>
+                                        </div>
+                                        <p>حوّل المبلغ فوراً وابعتلنا سكرين شوت على واتساب</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- زر تأكيد الأوردر -->
+                        <div class="form-submit-wrap">
+                            <label class="terms-agree">
+                                <input type="checkbox" required checked>
+                                <span>أؤكد صحة بيانات الأوردر ورقم الموبايل لتأكيد التوصيل</span>
+                            </label>
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                تأكيد وإرسال الأوردر عبر واتساب (0 ج.م)
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- الجانب الإرشادي للأوردر -->
+                    <div class="checkout-aside">
+                        <div class="summary-recap-box">
+                            <h4 class="recap-title">موجز سلة الطلبات</h4>
+                            <div class="checkout-recap-items" id="checkout-recap-items">
+                                <!-- يتم التعبئة ديناميكياً بواسطة JS -->
+                            </div>
+                            <div class="recap-divider"></div>
+                            <div class="recap-item total">
+                                <span>الإجمالي المستحق:</span>
+                                <strong id="checkout-recap-total">0 ج.م</strong>
+                            </div>
+                        </div>
+
+                        <div class="trust-box">
+                            <h4 class="trust-title">ليه تطلب من FOOD BURGER؟</h4>
+                            <ul class="trust-list">
+                                <li>
+                                    <span class="check-icon">🔥</span>
+                                    <span>بيف صافي طازج 100% ومفروم يومياً بدون فول صويا</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon">🧀</span>
+                                    <span>ميكس جبن شيدر وموتزاريلا سايحة وموتزاريلا ستيكس مقرمشة</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon">⚡</span>
+                                    <span>أسرع توصيل سخن في علبتنا الحرارية المميزة</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon">🏷️</span>
+                                    <span>استخدم كود <strong>BURGER15</strong> لخصم 15% على أوردرك</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- تذييل الصفحة (Footer) -->
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <a href="#" class="brand-logo footer-logo">
+                    <span class="logo-text">FOOD <span class="logo-accent">BURGER</span></span>
+                    <span class="logo-sub">TASTE THAT SPEAKS FOR ITSELF</span>
+                </a>
+                <p class="footer-desc">
+                    مطعم FOOD BURGER المتخصص في أقوى ساندوتشات البيف برجر والسماش برجر بالجبن السايح والبيكون المقرمش — طعم بيتكلم عن نفسه من أول قطمة.
+                </p>
+                <div class="social-links">
+                    <a href="https://wa.me/201200297370" target="_blank" aria-label="WhatsApp" data-whatsapp-link>WA</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="TikTok">TK</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">روابط سريعة</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero">الرئيسية</a></li>
+                    <li><a href="#bestsellers">وحوش المنيو 🔥</a></li>
+                    <li><a href="#products">المنيو الكامل</a></li>
+                    <li><a href="#cart">سلة الطلبات</a></li>
+                    <li><a href="#checkout">تأكيد الأوردر</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">التواصل ومواعيد العمل</h4>
+                <ul class="footer-links">
+                    <li><a href="https://wa.me/201200297370" target="_blank" data-whatsapp-link>اطلب عبر واتساب (<span data-whatsapp-display>01200297370</span>)</a></li>
+                    <li><span>مفتوح يومياً: 12 ظهراً - 3 فجراً</span></li>
+                    <li><span>توصيل مجاني فوق 250 ج.م</span></li>
+                    <li><span>متاح دليفري وتيك أواي</span></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-col-title">عروض FOOD BURGER الحصرية</h4>
+                <p class="newsletter-desc">سجل رقمك أو بريدك عشان يوصلك أقوى عروض الكومبو والكوبونات السرية.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('تم اشتراكك بنجاح في قائمة عروض FOOD BURGER 🔥');">
+                    <input type="email" placeholder="بريدك الإلكتروني" required>
+                    <button type="submit" class="btn btn-primary btn-sm">اشتراك</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container bottom-content">
+                <p>© 2026 FOOD BURGER — TASTE THAT SPEAKS FOR ITSELF. جميع الحقوق محفوظة.</p>
+                <div class="payment-cards-icons">
+                    <span>CASH ON DELIVERY</span>
+                    <span>INSTAPAY</span>
+                    <span>VODAFONE CASH</span>
+                    <span>TAKEAWAY</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زر واتساب العائم أسفل الشاشة (Floating WhatsApp Button) -->
+    <a href="https://wa.me/201200297370" target="_blank" class="floating-whatsapp-btn" id="floating-whatsapp" aria-label="تواصل عبر واتساب" data-whatsapp-link>
+        <svg width="30" height="30" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="floating-whatsapp-tooltip">اطلب فوراً عبر واتساب</span>
+    </a>
+
+    <!-- ربط كود JavaScript التفاعلي -->
+    <script src="app.js"></script>
+</body>
+</html>
